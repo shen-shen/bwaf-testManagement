@@ -15,13 +15,13 @@ module.exports = {
   		primaryKey: true
   	},
   	Description: {
-  		type: 'string'
+  		type: 'text'
   	},
   	Steps: {
-  		type: 'string'
+  		type: 'text'
   	},
   	Category: {
-  		type: 'string'
+  		type: 'text'
   	},
   	Active: {
   		type: 'boolean'
@@ -33,17 +33,25 @@ module.exports = {
   		type: 'string'
   	},
   	Method: {
-  		type: 'string'
+  		type: 'text'
   	},
   	InvocationNumber: {
   		type: 'interger'
   	},
   	Testdata: {
-  		type: 'string'
+  		type: 'text'
   	},
-  	Testdata: {
+  	Automated: {
   		type: 'boolean'
-  	}
-  }
+  	},
+    report: {
+      model: 'Report'
+    }
+  },
+      getTestcases: function(cb) {
+        Testcase.find().exec(function(err, res) {
+            cb(res);
+        });
+    },
 };
 

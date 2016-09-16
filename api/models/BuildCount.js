@@ -11,10 +11,13 @@ module.exports = {
   	BwBuild : {
   		type: 'string',
   		primaryKey: true
-  },
+ 	},
   	count: {
   		type: 'integer'
-  }
+  	}
+  	// run: {
+  	// 	model: 'Run'
+  	// }
 }
 };
 

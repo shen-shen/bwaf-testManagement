@@ -34,6 +34,7 @@ module.exports.routes = {
 
   '/': 'HomepageController.index',
   '/BuildCount': 'BuildCountController.findAll'
+  // '/Testcases': 'Testcase.getTestcases'
   // '/RunCount': 'RunController.view'
   // '/Projects': 'ProjectController.list'
   

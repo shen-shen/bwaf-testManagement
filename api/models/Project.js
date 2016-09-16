@@ -10,16 +10,24 @@ module.exports = {
 	// connection: 'sqlserver',
 	// tableName: 'Project',
   attributes: {
-  	ProjectID: {
+  	id: {
+      columnName: 'ProjectID',
   		type: 'integer',
   		primaryKey: true
-  	}
+  	},
   	// Name: {
   	// 	type: 'string'
   	// },
   	// Channel: {
   	// 	type: 'string'
-  	// }
+  	// },
+    // runs: {
+    //   collection: 'Run',
+    //   via: 'project'
+    // },
+    // report: {
+    //   model: 'Report'
+    // }
   }
 };
 
