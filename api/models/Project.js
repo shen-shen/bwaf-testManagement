@@ -6,28 +6,33 @@
  */
 
 module.exports = {
-	// schema: true,
-	// connection: 'sqlserver',
-	// tableName: 'Project',
+  autoPK        : false,
+  autoCreatedAt : false,
+  autoUpdatedAt : false,
+	schema: true,
+	connection: 'sqlserver',
+	tableName: 'Project',
+  migrate: 'safe',
   attributes: {
-  	id: {
-      columnName: 'ProjectID',
+  	ProjectID: {
   		type: 'integer',
   		primaryKey: true
   	},
-  	// Name: {
-  	// 	type: 'string'
-  	// },
-  	// Channel: {
-  	// 	type: 'string'
-  	// },
-    // runs: {
-    //   collection: 'Run',
-    //   via: 'project'
-    // },
-    // report: {
-    //   model: 'Report'
-    // }
+  	Name: {
+  		type: 'string',
+      size: 40
+  	},
+  	Channel: {
+  		type: 'string',
+      size: 30
+  	},
+    runs: {
+      collection: 'run',
+      via: 'project'
+    },
+    report: {
+      model: 'report'
+    }
   }
 };
 

@@ -6,12 +6,51 @@
  */
 
 module.exports = {
-
-  attributes: {
-  	ResultID: {
+	tableName: 'Result',
+    autoPK        : false,
+  	autoCreatedAt : false,
+  	autoUpdatedAt : false,
+  	attributes: {
+  	id: {
+  		columnName: 'ResultID',
   		type: 'integer',
-  		primaryKey: true
+  		primaryKey: true,
+  	},
+  	run: {
+  		model: 'run',
+  		columnName: 'RunId',
+  	},
+  	test: {
+  		model: 'testcase',
+  		columnName: 'TestcaseId',
+  		size: 100
+  	},
+  	Daterun: {
+  		type: 'datetime'
+  	},
+  	Status: {
+  		type: 'string',
+  		size: 10
+  	},
+  	Browser: {
+  		type: 'string',
+  		size: 20
+  	},
+  	Theme: {
+  		type: 'string',
+  		size: 20
+  	},
+  	Notes: {
+  		type: 'text'
+  	},
+  	Bugs: {
+  		type: 'string',
+  		size: 200
+  	},
+  	Error: {
+  		type: 'text'
   	}
+
   }
 };
 

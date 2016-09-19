@@ -6,20 +6,59 @@
  */
 
 module.exports = {
-
+  autoPK        : false,
+  autoCreatedAt : false,
+  autoUpdatedAt : false,
+  schema: true,
+  connection: 'sqlserver',
+  tableName: 'Run',
   attributes: {
   	id: {
-  		columnName: 'RunID',
+      columnName: 'RunID',
   		type: 'integer',
   		primaryKey: true
   	},
-  	// project: {
-  	// 	model: 'Project',
-  	// 	columnName: 'ProjectID'
-  	// },
+    BwBuild: {
+      type: 'string',
+      size: 50
+    },
+    BwEnv: {
+      type: 'string',
+      size: 40
+    },
+    DeviceName: {
+      type: 'string',
+      size: 40
+    },
+    DeviceBuild: {
+      type: 'string',
+      size: 40
+    },
+    RunLabel: {
+      type: 'string',
+      size: 40
+    },
+    StartTime: {
+      type: 'datetime'
+    },
+    FinishTime: {
+      type: 'datetime'
+    },
+    BwafHostname: {
+      type: 'string',
+      size: 40
+    },
+  	project: {
+  		model: 'project',
+      columnName: 'ProjectID'
+  		// columnName: 'ProjectID'
+  	},
   	report: {
   		model: 'Report'
-  	}
+  	},
+    result: {
+      colleciton: 'result'
+    }
   }
 };
 

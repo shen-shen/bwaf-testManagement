@@ -1,23 +1,24 @@
 /**
- * BuildCount.js
+ * Groups.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
-  migrate: 'safe',
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
+  tableName: 'Groups',
   attributes: {
-  	BwBuild : {
+  	Group: {
   		type: 'string',
-  		primaryKey: true
- 	},
-  	count: {
-  		type: 'integer'
+      size: 100
+  	},
+  	test: {
+  		model: 'testcase',
+  		columnName: 'TestcaseId',
+      size: 50
   	}
-  	// run: {
-  	// 	model: 'Run'
-  	// }
-}
+  }
 };
 

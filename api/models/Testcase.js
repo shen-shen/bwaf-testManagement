@@ -6,13 +6,17 @@
  */
 
 module.exports = {
-	// schema: true,
-	// connection: 'sqlserver',
-	// tableName: 'Testcase',
+	schema: true,
+	connection: 'sqlserver',
+	tableName: 'Testcase',
+  autoPK        : false,
+  autoCreatedAt : false,
+  autoUpdatedAt : false,
   attributes: {
   	TestcaseID: {
   		type: 'string',
-  		primaryKey: true
+  		primaryKey: true,
+      size: 100
   	},
   	Description: {
   		type: 'text'
@@ -21,19 +25,23 @@ module.exports = {
   		type: 'text'
   	},
   	Category: {
-  		type: 'text'
+  		type: 'string',
+      size: 50
   	},
   	Active: {
   		type: 'boolean'
   	},
   	Version: {
-  		type: 'string'
+  		type: 'string',
+      size: 20
   	},
   	Channel: {
-  		type: 'string'
+  		type: 'string',
+      size: 20
   	},
   	Method: {
-  		type: 'text'
+  		type: 'text',
+      size: 250
   	},
   	InvocationNumber: {
   		type: 'interger'
@@ -45,7 +53,11 @@ module.exports = {
   		type: 'boolean'
   	},
     report: {
-      model: 'Report'
+      model: 'report'
+    },
+    keywords: {
+      collection : 'keyword',
+      through: 'testcasevskeyword'
     }
   },
       getTestcases: function(cb) {

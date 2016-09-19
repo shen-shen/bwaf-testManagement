@@ -30,12 +30,12 @@ module.exports = {
   	/*
   	one-to-many
   	*/
-  	// projects: {
-  	// 	collection: 'Project',
-  	// 	via: 'report'
-  	// },
-  	startTime: 'date',
-    endTime: 'date',
+  	projects: {
+  		collection: 'Project',
+  		via: 'report'
+  	},
+  	startTime: 'datetime',
+    endTime: 'datetime',
 
     passTests: 'number',
     failTests: 'number',
