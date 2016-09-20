@@ -17,7 +17,11 @@ module.exports = {
   	builds: {
   		collection: 'build',
   		via: 'release'
-  	}
+  	},
+    reports: {
+      collection: 'report',
+      via:'release'
+    }
   },
 
   getReleases: function(cb) {
