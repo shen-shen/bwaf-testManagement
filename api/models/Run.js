@@ -58,6 +58,9 @@ module.exports = {
   	},
     result: {
       colleciton: 'result'
+    },
+    build: {
+      model: 'build'
     }
   }
 };

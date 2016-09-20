@@ -12,6 +12,7 @@ module.exports = {
   autoPK        : false,
   autoCreatedAt : false,
   autoUpdatedAt : false,
+  // migrate: 'safe',
   attributes: {
   	TestcaseID: {
   		type: 'string',

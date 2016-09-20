@@ -33,6 +33,12 @@ module.exports = {
     report: {
       model: 'report'
     }
+  },
+
+  getProjects: function(cb) {
+    Project.find().exec(function(err, res) {
+        cb(res);
+    });
   }
 };
 

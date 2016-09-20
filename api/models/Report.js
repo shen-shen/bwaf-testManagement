@@ -41,6 +41,19 @@ module.exports = {
     failTests: 'number',
     skipTests: 'number',
     unknownTests: 'number'
-  }
+  },
+
+  getReport: function(id, cb) {
+    Report.findOne({
+        id: id
+    }).exec(function(err, result) {
+        if (err) console.log('ReportService.getReport -> ' + err);
+        
+        cb(result);
+    });
+  },
+
+  
+
 };
 

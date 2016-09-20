@@ -6,7 +6,8 @@
  */
 
 module.exports = {
-
+  autoCreatedAt : false,
+  autoUpdatedAt : false,
   attributes: {
   	name: {
   		type:'string',
@@ -17,6 +18,12 @@ module.exports = {
   		collection: 'build',
   		via: 'release'
   	}
+  },
+
+  getReleases: function(cb) {
+    Release.find().exec(function(err, res) {
+        cb(res);
+    });
   }
 };
 
