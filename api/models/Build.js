@@ -22,26 +22,30 @@ module.exports = {
       // }
   },
 
-  getReportsByBuild: function(id, cb) {
-    Report.find({build: id}).exec(function(err, result){
+  getLastBuildByRelease : function(release,cb) {
+    Build.find({release: release}).sort({id: 'DESC'}).exec(function(err, results){
       if(err) console.log(err);
+      else if(results.length === 0) {
+        cb([]);
+      }
       else {
-        cb(result);
+        cb(results[0]);
       }
     });
-    // body...
-  },
-
-
-
-  getStatus: function(id, cb) {
-    var status = {
-      passed : 0,
-      failed: 0,
-      skipped: 0,
-      unknown: 0
-    };
-
   }
+
+
+
+
+
+  // getStatus: function(id, cb) {
+  //   var status = {
+  //     passed : 0,
+  //     failed: 0,
+  //     skipped: 0,
+  //     unknown: 0
+  //   };
+
+  // }
 };
 

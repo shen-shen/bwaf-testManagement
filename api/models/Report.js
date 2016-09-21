@@ -60,7 +60,51 @@ module.exports = {
     });
   },
 
-  
+  getReports: function(json, cb) {
+    Report.find(json).exec(function(err, result) {
+        if (err) console.log('ReportService.getReports -> ' + err);
+        
+        cb(result);
+    });
+  },
+
+  getPieChartDataByReports: function(json,cb) {
+      var passCount = 0;
+      var failCount = 0;
+      var skipCount = 0;
+      var unknownCount = 0;
+      Report.getReports(json,function(reports){
+      
+      reports.forEach(function(report){
+        passCount += report.passTests;
+        failCount += report.failTests;
+        skipCount += report.skipTests;
+        unknownCount += report.unknownTests;
+      });
+
+      var pieChartData = [
+        {name : 'pass',
+        count: passCount},
+        {name : 'fail',
+        count: failCount},
+        {name : 'skip',
+        count: skipCount},
+        {name : 'unknown',
+        count: unknownCount}
+      ];
+
+      cb(pieChartData);
+    });
+  }
+
+  // getReportsByBuild: function(id, cb) {
+  // Report.find({build: id}).exec(function(err, result){
+  //   if(err) console.log(err);
+  //   else {
+  //     cb(result);
+  //     }
+  //   });
+  // }
 
 };
 

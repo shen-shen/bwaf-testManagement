@@ -23,7 +23,7 @@ module.exports = {
 // });
 // }
 
-processBuildCount: function(req,res){
+processStatusCount: function(req,res){
 	var runs = Run.findAll()
 }
 

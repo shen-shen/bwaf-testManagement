@@ -51,6 +51,15 @@ module.exports = {
   		type: 'text'
   	}
 
+  },
+
+  getGroupsWithCounts: function(cb) {
+    Result.count().exec(function(err, result){
+        if(err) console.log(err);
+        else {
+          cb({result});
+          }
+    });
   }
 };
 

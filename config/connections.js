@@ -93,9 +93,9 @@ module.exports.connections = {
     user: 'sa',
     password: 'pass123',
     host: '10.1.4.59', // azure database
-    database: 'bwaftest',
-    port: '1434',
-    intance: 'BWAFTEST'
+    database: 'bwafdb',
+    port: '1433',
+    // intance: 'BWAFTEST'
     // options: {
     //   // encrypt: true   // use this for Azure databases
     // }

@@ -11,8 +11,8 @@ module.exports = {
   attributes: {
   	name: {
   		type:'string',
-  		enum: ['undefined', 'BW5.0', 'BW4.0'],
-  		defaultsTo: 'undefined' 
+  		enum: ['BW5.0', 'BW4.0'],
+  		defaultsTo: 'BW5.0' 
   	},
   	builds: {
   		collection: 'build',

@@ -7,5 +7,10 @@
 
 module.exports = {
 	
+	getStatusCount: function(req,res) {
+		Result.getGroupsWithCounts(function(result) {
+			res.send(result);
+		});
+	}
 };
 

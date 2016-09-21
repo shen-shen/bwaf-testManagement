@@ -11,7 +11,7 @@
 
 module.exports.models = {
   connection: 'sqlserver',
-  migrate: 'drop'
+  migrate: 'safe'
 
   /***************************************************************************
   *                                                                          *
