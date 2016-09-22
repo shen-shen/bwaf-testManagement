@@ -6,7 +6,9 @@
  */
 
 module.exports = {
-
+  connection: 'sqlserver',
+  tableName: 'BwBuild',
+  migrate: 'alter',
   attributes: {
   		name: 'string',
   		release: {

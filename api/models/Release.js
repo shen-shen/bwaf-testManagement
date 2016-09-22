@@ -7,12 +7,13 @@
 
 module.exports = {
   autoCreatedAt : false,
-  autoUpdatedAt : false,
+  autoUpdatedAt : false,  
+  connection: 'sqlserver',
+  tableName: 'BwRelease',
+  migrate: 'alter',
   attributes: {
   	name: {
-  		type:'string',
-  		enum: ['BW5.0', 'BW4.0'],
-  		defaultsTo: 'BW5.0' 
+  		type:'string'
   	},
   	builds: {
   		collection: 'build',
