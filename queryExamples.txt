@@ -88,6 +88,7 @@ group by status
 ********************************
 Get latest result for status count for the given build 
 ********************************
+
 select status, count(r.testcaseid) as 'count' from result r
 inner join(
 select result.testcaseid as 'testcaseid', max(daterun) as 'date' from result,run,testcase,project
@@ -97,5 +98,7 @@ and project.projectid = run.projectid
 and project.name = 'BML'
 and Run.BwBuild = '5.0.0.28'
 group by result.testcaseid
-) tm on r.testcaseid = tm.testcaseid and r.daterun = tm.date
+) rr on r.testcaseid = rr.testcaseid and r.daterun = rr.date
 group by status
+
+
