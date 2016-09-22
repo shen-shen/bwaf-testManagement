@@ -1,0 +1,56 @@
+select status, count(distinct result.testcaseid) as 'count' from result,run,testcase,project
+where result.RunId = Run.RunID 
+and testcase.testcaseid = result.testcaseid
+and project.projectid = run.projectid
+and project.name = 'BML'
+and Run.BwBuild = '5.0.0.28'
+ group by status order by status DESC
+
+ select result.testcaseid, count(result.testcaseid) as 'countN' from result,run,testcase,project
+where result.RunId = Run.RunID 
+and testcase.testcaseid = result.testcaseid
+and project.projectid = run.projectid
+and project.name = 'BML'
+and Run.BwBuild = '5.0.0.28'
+ group by result.testcaseid
+ having count(result.testcaseid)>1
+  order by result.testcaseid DESC
+
+
+  select * from result,run,testcase,project
+where result.RunId = Run.RunID 
+and testcase.testcaseid = result.testcaseid
+and project.projectid = run.projectid
+and project.name = 'BML'
+and Run.BwBuild = '5.0.0.28'
+and result.testcaseid = 'BML_BPTieredFeeLowMin.0348'
+
+
+  select  count( distinct result.testcaseid) as 'count', status, Max(DateRun) as 'date' from result,run,testcase,project
+where result.RunId = Run.RunID 
+and testcase.testcaseid = result.testcaseid
+and project.projectid = run.projectid
+and project.name = 'BML'
+and Run.BwBuild = '5.0.0.29'
+and result.testcaseid = 'BML_EBILLTieredFeeLowMax.0014'
+group by status
+
+
+select result.testcaseid, max(daterun) from result,run,testcase,project
+where result.RunId = Run.RunID 
+and testcase.testcaseid = result.testcaseid
+and project.projectid = run.projectid
+and project.name = 'BML'
+and Run.BwBuild = '5.0.0.28'
+ group by result.testcaseid
+
+ select * from result r
+inner join(
+select result.testcaseid, max(daterun) from result,run,testcase,project
+where result.RunId = Run.RunID 
+and testcase.testcaseid = result.testcaseid
+and project.projectid = run.projectid
+and project.name = 'BML'
+and Run.BwBuild = '5.0.0.28'
+group by result.testcaseid
+) tm on r.testcaseid = tm.testcaseid
