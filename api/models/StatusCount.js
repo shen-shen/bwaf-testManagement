@@ -23,6 +23,15 @@ module.exports = {
         cb(result);
       }
   });
-  }
+  },
+
+  //   getStatusCountByBuildId: function(id,cb){
+  //   StatusCount.query('select status, count(*) as \'count\' from result,run where result.RunId = Run.RunID and Run.BwBuild = \''+id+'\' group by status order by status DESC', function(err, result) {
+  //     if(err) console.log(err);
+  //     else{
+  //       cb(result);
+  //     }
+  // });
+  // }
 };
 
