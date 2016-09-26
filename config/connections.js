@@ -92,9 +92,9 @@ module.exports.connections = {
     adapter: 'sails-sqlserver',
     user: 'sa',
     password: 'pass123',
-    host: 'localhost', // azure database
-    database: 'bwafdb',
-    port: '1433',
+    host: 'autohost-win', // azure database
+    database: 'bwaftest',
+    port: '1434',
     // intance: 'BWAFTEST'
     // options: {
     //   // encrypt: true   // use this for Azure databases

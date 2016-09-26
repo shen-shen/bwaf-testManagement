@@ -5,6 +5,8 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+var DbGetterController = require('./DbGetterController');
+
 module.exports = {
 	
 	//function to get dashbord data
@@ -79,8 +81,25 @@ module.exports = {
 		//return json output
 		view();
 
-	}
+	},
 
+
+	/*
+	BML status example with existing db
+	*/
+	bmlPieData: function(req,res) {
+
+		var buildName = '5.0.0.28';
+		DbGetterController.getBmlPieData(buildName,'BML',function(result)
+		{
+            var out = {
+                buildName: buildName,
+                pieChartData: result
+            };
+            
+            res.send(out);
+		});
+	}
 
 };
 
